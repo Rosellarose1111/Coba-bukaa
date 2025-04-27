@@ -1,0 +1,284 @@
+/* Base styles and variables */
+:root {
+    --primary-color: #d65d7a;
+    --secondary-color: #f8e1e8;
+    --text-color: #333;
+    --light-text: #666;
+    --white: #fff;
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: #fdf5f7;
+    padding: 0;
+    margin: 0;
+}
+
+/* Container styles */
+.container {
+    max-width: 100%;
+    padding: 1rem;
+}
+
+/* Header styles */
+header {
+    text-align: center;
+    padding: 1.5rem 0;
+}
+
+header h1 {
+    color: var(--primary-color);
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+/* Card styles */
+.card {
+    background-color: var(--white);
+    border-radius: 10px;
+    padding: 2rem;
+    margin: 1rem 0;
+    box-shadow: var(--shadow);
+    text-align: center;
+    position: relative;
+}
+
+.heart-animation {
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.card h2 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.card p {
+    margin-bottom: 1rem;
+    color: var(--light-text);
+}
+
+/* Gallery styles */
+.gallery {
+    margin: 2rem 0;
+}
+
+.gallery h2 {
+    text-align: center;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.gallery-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 1rem;
+}
+
+.memory-placeholder {
+    width: calc(33.333% - 1rem);
+    min-width: 80px;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.memory-placeholder svg {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+}
+
+.memory-placeholder p {
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+    color: var(--light-text);
+}
+
+/* Reasons list styles */
+.reasons {
+    background-color: var(--white);
+    border-radius: 10px;
+    padding: 2rem;
+    margin: 2rem 0;
+    box-shadow: var(--shadow);
+}
+
+.reasons h2 {
+    text-align: center;
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+}
+
+.reasons ul {
+    list-style: none;
+}
+
+.reasons li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+    padding: 0.8rem;
+    background-color: var(--secondary-color);
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+.reasons li:hover {
+    transform: translateY(-3px);
+}
+
+.reasons li i {
+    color: var(--primary-color);
+    font-size: 1.2rem;
+    margin-right: 1rem;
+    width: 24px;
+    text-align: center;
+}
+
+/* Message styles */
+.message {
+    background-color: var(--white);
+    border-radius: 10px;
+    padding: 2rem;
+    margin: 2rem 0;
+    box-shadow: var(--shadow);
+}
+
+.message h2 {
+    text-align: center;
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+}
+
+.message-content {
+    font-style: italic;
+    line-height: 1.8;
+}
+
+.message-content p {
+    margin-bottom: 1rem;
+}
+
+.signature {
+    text-align: right;
+    margin-top: 2rem;
+    font-style: normal;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+/* Footer styles */
+footer {
+    text-align: center;
+    padding: 2rem 0;
+    position: relative;
+}
+
+.love-button {
+    background-color: var(--primary-color);
+    color: var(--white);
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 50px;
+    font-size: 1rem;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+    box-shadow: var(--shadow);
+}
+
+.love-button:hover {
+    background-color: #c04d67;
+    transform: scale(1.05);
+}
+
+.love-button:active {
+    transform: scale(0.98);
+}
+
+.love-button i {
+    font-size: 0.9rem;
+}
+
+.love-sent-message {
+    margin-top: 1rem;
+    color: var(--primary-color);
+    display: none;
+    animation: fadeIn 1s;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.copyright {
+    margin-top: 2rem;
+    font-size: 0.8rem;
+    color: var(--light-text);
+}
+
+/* Media Queries for Responsive Design */
+@media (min-width: 768px) {
+    .container {
+        max-width: 700px;
+        margin: 0 auto;
+    }
+    
+    header h1 {
+        font-size: 2.5rem;
+    }
+    
+    .gallery-container {
+        gap: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        font-size: 14px;
+    }
+    
+    .card, .reasons, .message {
+        padding: 1.5rem;
+    }
+    
+    .memory-placeholder {
+        width: calc(50% - 0.5rem);
+    }
+    
+    .heart-animation {
+        font-size: 1.8rem;
+    }
+}
